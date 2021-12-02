@@ -1,5 +1,4 @@
-// ==UserScript==
-// @name         东南大学研究生人文讲座傻瓜式预约脚本 Humanities Lecture Booking Script (using Brute-force algorithm) for graduate students of Southeast University
+// @name         seu研究生人文讲座傻瓜式预约脚本 Humanities Lecture Booking Script for graduate students of Southeast University
 // @namespace    http://nic.seu.edu.cn/
 // @version      v1.02
 // @description  东南大学 我真的好喜欢你啊 为了你 我要写脚本
@@ -11,8 +10,6 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @run-at       document-end
-// ==/UserScript==
-let postInterval = 300 //每次post的时间间隔 推荐100-300ms
 setTimeout(function(){
     let all_ele = document.getElementsByClassName("bh-border bh-bColor-grey-3 bh-mv-16 hdhb")
     let all_wid = $("[data-x-wid]").map(function(){return $(this).attr("data-x-wid");}).get()
