@@ -10,6 +10,7 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @run-at       document-end
+// ==/UserScript==
 setTimeout(function(){
     let all_ele = document.getElementsByClassName("bh-border bh-bColor-grey-3 bh-mv-16 hdhb")
     let all_wid = $("[data-x-wid]").map(function(){return $(this).attr("data-x-wid");}).get()
@@ -23,14 +24,14 @@ setTimeout(function(){
     flash.textContent = "-1"
     flash.addEventListener("click",function(){
         let temp_data = BH_UTILS.doSyncAjax(baseUrl+'/hdyy/vcode.do' + '?_=' + new Date().getTime(), {})
-        $("#tempImage").attr('src', temp_data.datas)
+        $("#tempImage").attr('src', temp_data.result)
     })
     $("h2").append(newVcode)
     $("h2").append(newInput)
     $("h2").append(flash)
     newVcode.addEventListener("click", function(){
         let temp_data = BH_UTILS.doSyncAjax(baseUrl+'/hdyy/vcode.do' + '?_=' + new Date().getTime(), {})
-        $("#tempImage").attr('src', temp_data.datas)
+        $("#tempImage").attr('src', temp_data.result)
     })
     for(let i = 0;i<all_ele.length;i++){
         let newbtn = document.createElement("button")
